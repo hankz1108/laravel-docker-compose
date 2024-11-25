@@ -1,0 +1,12 @@
+version: '0.1.0'
+
+services:
+
+### Redis ################################################
+  redis:
+    container_name: redis
+    build: ./redis
+    volumes:
+      - ${REDIS_DATA_PATH}:/data
+    ports:
+      - "${REDIS_PORT}:6379"
