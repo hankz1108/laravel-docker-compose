@@ -10,3 +10,17 @@ services:
       - ${REDIS_DATA_PATH}:/data
     ports:
       - "${REDIS_PORT}:6379"
+
+### PHP8.3 ################################################
+  php:
+    container_name: php8.3
+    build: ./php-fpm
+    environment:
+      - PHP_VERSION=8.3
+    args:
+      - TIMEZONE=${TIMEZONE}
+    volumes:
+      - ${PHP_APP_PATH}:/var/www/html
+      - ./logs/php/8.3/:/var/log/php83
+    expose:
+      - "9000"
