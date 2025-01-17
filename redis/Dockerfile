@@ -6,6 +6,7 @@ LABEL maintainer="Hankz <hankzhong@june1.com.tw>"
 RUN mkdir -p /usr/local/etc/redis
 COPY conf.d/redis.conf /usr/local/etc/redis/redis.conf
 
+# VOLUME /usr/local/etc/redis
 VOLUME /data
 
 EXPOSE 6379
